@@ -14,14 +14,15 @@ import {
   User,
   LogOut,
 } from "lucide-react";
+import Link from "next/link";
 
 const menuItems = [
-  { icon: LayoutDashboard, label: "Dashboard" },
-  { icon: ShoppingCart, label: "Orders" },
-  { icon: Users, label: "Clients" },
-  { icon: Utensils, label: "Menu" },
-  { icon: BookOpen, label: "Reservations" },
-  { icon: Settings, label: "Settings" },
+  { icon: LayoutDashboard, label: "Dashboard", href: "/"},
+  { icon: ShoppingCart, label: "Orders", href: "/orders" },
+  { icon: Users, label: "Clients", href: "/clients"},
+  { icon: Utensils, label: "Menu", href: "/menu"},
+  { icon: BookOpen, label: "Reservations", href: "/reservations" },
+  { icon: Settings, label: "Settings", href: "/settings" },
 ];
 
 export default function Sidebar() {
@@ -69,7 +70,11 @@ export default function Sidebar() {
         </div>
 
         <nav className="flex flex-col gap-2">
-          {menuItems.map(({ icon: Icon, label }) => (
+          {menuItems.map(({ icon: Icon, label, href }) => (
+            <Link 
+              href={href}
+              key={label}
+            >
             <div
               key={label}
               onClick={() => setActive(label)}
@@ -90,6 +95,8 @@ export default function Sidebar() {
                 {label}
               </p>
             </div>
+            </Link>
+            
           ))}
         </nav>
       </div>
