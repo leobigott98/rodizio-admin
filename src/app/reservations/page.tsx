@@ -8,6 +8,7 @@ import {
   Search,
 } from "lucide-react";
 import { useState } from "react";
+import Layout from "@/src/components/Layout";
 
 type TimeBlock = {
   time: string;
@@ -57,11 +58,8 @@ export default function ReservationsPage() {
   };
 
   return (
-    <div className="flex min-h-screen">
-      <Sidebar />
-
-      <main className="flex-1 ml-64 p-8 grid grid-cols-1 lg:grid-cols-3 gap-8 bg-background-light dark:bg-background-dark overflow-y-auto text-[#0e151b] dark:text-slate-50">
-        {/* LEFT SIDE — Overview */}
+   <Layout>
+    {/* LEFT SIDE — Overview */}
         <div className="lg:col-span-2 flex flex-col gap-6">
           {/* Header */}
           <div className="flex flex-wrap justify-between items-center gap-4">
@@ -206,7 +204,6 @@ export default function ReservationsPage() {
             </div>
           </div>
         </div>
-      </main>
-    </div>
+      </Layout>
   );
 }

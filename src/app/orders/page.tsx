@@ -3,6 +3,7 @@
 import Sidebar from "@/src/components/Sidebar";
 import { Plus, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import Layout from "@/src/components/Layout";
 
 type Order = {
   id: string;
@@ -30,11 +31,8 @@ export default function OrdersPage() {
   const [selectedOrder, setSelectedOrder] = useState<Order | null>(orders[1]);
 
   return (
-    <div className="flex min-h-screen">
-      <Sidebar />
-
-      <main className="flex-1 ml-64 p-8 grid grid-cols-1 lg:grid-cols-3 gap-8 bg-background-light dark:bg-background-dark text-[#0e151b] dark:text-white overflow-y-auto">
-        {/* Left Section - Orders Table */}
+    <Layout>
+    {/* Left Section - Orders Table */}
         <div className="lg:col-span-2">
           {/* Header */}
           <div className="flex flex-wrap justify-between gap-3 mb-6">
@@ -193,7 +191,6 @@ export default function OrdersPage() {
             <p className="text-gray-500 dark:text-gray-400">Select an order to view details.</p>
           )}
         </div>
-      </main>
-    </div>
+      </Layout>
   );
 }

@@ -3,6 +3,7 @@
 import Sidebar from "@/src/components/Sidebar";
 import { Search, Plus, Edit2, Trash2 } from "lucide-react";
 import { useState } from "react";
+import Layout from "@/src/components/Layout";
 
 type Dish = {
   id: number;
@@ -74,11 +75,8 @@ export default function MenuPage() {
   );
 
   return (
-    <div className="flex min-h-screen">
-      <Sidebar />
-
-      <main className="flex-1 ml-64 p-8 bg-background-light dark:bg-background-dark text-[#0e151b] dark:text-slate-50 overflow-y-auto">
-        {/* Header */}
+    <Layout>
+    {/* Header */}
         <div className="flex flex-wrap justify-between items-center gap-4 mb-8">
           <div className="flex flex-col gap-1">
             <p className="text-4xl font-black tracking-tight">Menu</p>
@@ -174,7 +172,6 @@ export default function MenuPage() {
             </div>
           ))}
         </div>
-      </main>
-    </div>
+      </Layout>
   );
 }

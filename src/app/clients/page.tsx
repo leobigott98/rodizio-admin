@@ -3,6 +3,7 @@
 import Sidebar from "@/src/components/Sidebar";
 import { Search } from "lucide-react";
 import { useState } from "react";
+import Layout from "@/src/components/Layout";
 
 type Client = {
   name: string;
@@ -90,10 +91,7 @@ export default function ClientsPage() {
   );
 
   return (
-    <div className="flex min-h-screen">
-      <Sidebar />
-
-      <main className="flex-1 ml-64 p-8 grid grid-cols-1 lg:grid-cols-3 gap-8 bg-background-light dark:bg-background-dark text-[#0e151b] dark:text-white overflow-y-auto">
+    <Layout>
         {/* LEFT SECTION — List */}
         <div className="lg:col-span-2 flex flex-col gap-6">
           {/* Header */}
@@ -266,7 +264,6 @@ export default function ClientsPage() {
             </ul>
           </div>
         </div>
-      </main>
-    </div>
+      </Layout>
   );
 }

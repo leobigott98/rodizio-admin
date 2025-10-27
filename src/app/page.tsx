@@ -9,6 +9,7 @@ import {
   Bot,
 } from "lucide-react";
 import { RevenueChart } from "../components/RevenueChart";
+import Layout from "../components/Layout";
 
 export default function Page() {
   const summaryCards = [
@@ -69,10 +70,8 @@ export default function Page() {
   ];
 
   return (
-    <div className="flex min-h-screen">
-      <Sidebar />
-      <main className="flex-1 ml-64 p-8 overflow-y-auto bg-background-light dark:bg-background-dark">
-        <div className="relative flex min-h-screen w-full bg-background-light dark:bg-background-dark font-display">
+    <Layout>
+    <div className="relative flex min-h-screen w-full bg-background-light dark:bg-background-dark font-display">
           {/* Main content */}
           <main className="flex-1 p-8 overflow-y-auto">
             {/* Header */}
@@ -283,7 +282,6 @@ export default function Page() {
         </div> */}
           </main>
         </div>
-      </main>
-    </div>
+      </Layout> 
   );
 }

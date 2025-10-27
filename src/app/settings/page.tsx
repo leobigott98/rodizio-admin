@@ -3,6 +3,7 @@
 import Sidebar from "@/src/components/Sidebar";
 import { useState } from "react";
 import { Moon, Sun, Bell, Globe, Lock, Trash2, Palette } from "lucide-react";
+import Layout from "@/src/components/Layout";
 
 export default function SettingsPage() {
   const [theme, setTheme] = useState(
@@ -30,10 +31,7 @@ export default function SettingsPage() {
   };
 
   return (
-    <div className="flex min-h-screen">
-      <Sidebar />
-
-      <main className="flex-1 ml-64 p-8 bg-background-light dark:bg-background-dark text-[#0e151b] dark:text-slate-50 overflow-y-auto">
+    <Layout>
         <div className="flex flex-col gap-8 max-w-4xl mx-auto">
           <header>
             <h1 className="text-4xl font-black mb-2">Settings</h1>
@@ -208,7 +206,6 @@ export default function SettingsPage() {
             </div>
           </section>
         </div>
-      </main>
-    </div>
+      </Layout>
   );
 }
