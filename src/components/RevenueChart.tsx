@@ -1,13 +1,13 @@
 import { AreaChart, Area, XAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 const data = [
-  { day: "Mon", revenue: 8200 },
-  { day: "Tue", revenue: 7500 },
-  { day: "Wed", revenue: 9100 },
-  { day: "Thu", revenue: 8800 },
-  { day: "Fri", revenue: 9400 },
-  { day: "Sat", revenue: 12000 },
-  { day: "Sun", revenue: 10500 },
+  { day: "Lun", ganancia: 8200 },
+  { day: "Mar", ganancia: 7500 },
+  { day: "Mie", ganancia: 9100 },
+  { day: "Jue", ganancia: 8800 },
+  { day: "Vie", ganancia: 9400 },
+  { day: "Sab", ganancia: 12000 },
+  { day: "Dom", ganancia: 10500 },
 ];
 
 export function RevenueChart() {
@@ -25,7 +25,7 @@ export function RevenueChart() {
           <Tooltip />
           <Area
             type="monotone"
-            dataKey="revenue"
+            dataKey="ganancia"
             stroke="#177ccf"
             fillOpacity={1}
             fill="url(#colorPrimary)"

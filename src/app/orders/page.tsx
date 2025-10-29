@@ -10,21 +10,21 @@ type Order = {
   client: string;
   amount: string;
   date: string;
-  status: "Delivered" | "Preparing" | "Pending" | "Canceled";
+  status: "Entregado" | "Preparando" | "Pendiente" | "Cancelado";
 };
 
 const orders: Order[] = [
-  { id: "#12345", client: "John Doe", amount: "$25.50", date: "2023-10-27", status: "Delivered" },
-  { id: "#12346", client: "Jane Smith", amount: "$42.00", date: "2023-10-27", status: "Preparing" },
-  { id: "#12347", client: "Peter Jones", amount: "$15.75", date: "2023-10-26", status: "Pending" },
-  { id: "#12348", client: "Mary Williams", amount: "$30.00", date: "2023-10-26", status: "Canceled" },
+  { id: "#12345", client: "John Doe", amount: "$25.50", date: "2023-10-27", status: "Entregado" },
+  { id: "#12346", client: "Jane Smith", amount: "$42.00", date: "2023-10-27", status: "Preparando" },
+  { id: "#12347", client: "Peter Jones", amount: "$15.75", date: "2023-10-26", status: "Pendiente" },
+  { id: "#12348", client: "Mary Williams", amount: "$30.00", date: "2023-10-26", status: "Cancelado" },
 ];
 
 const statusColors: Record<Order["status"], string> = {
-  Delivered: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300",
-  Preparing: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300",
-  Pending: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300",
-  Canceled: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300",
+  Entregado: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300",
+  Preparando: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300",
+  Pendiente: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300",
+  Cancelado: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300",
 };
 
 export default function OrdersPage() {

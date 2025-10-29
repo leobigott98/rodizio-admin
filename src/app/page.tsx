@@ -13,10 +13,10 @@ import Layout from "../components/Layout";
 
 export default function Page() {
   const summaryCards = [
-    { label: "Total Orders", value: "1,234" },
-    { label: "Total Clients", value: "567" },
-    { label: "Total Revenue", value: "$12,345" },
-    { label: "Avg. Order Value", value: "$21.75" },
+    { label: "Total de Órdenes", value: "1,234" },
+    { label: "Total de Clientes", value: "567" },
+    { label: "Ganancia Total", value: "$12,345" },
+    { label: "Monto Promedio", value: "$21.75" },
   ];
 
   const orders = [
@@ -25,15 +25,15 @@ export default function Page() {
       name: "John Doe",
       type: "Delivery",
       amount: "$25.50",
-      status: "Delivered",
+      status: "Entregado",
       color: "green",
     },
     {
       id: "#12344",
       name: "Jane Smith",
-      type: "In-site",
+      type: "En sitio",
       amount: "$42.00",
-      status: "Completed",
+      status: "Completado",
       color: "green",
     },
     {
@@ -41,7 +41,7 @@ export default function Page() {
       name: "Mike Johnson",
       type: "Delivery",
       amount: "$15.75",
-      status: "In Progress",
+      status: "En Proceso",
       color: "yellow",
     },
     {
@@ -49,15 +49,15 @@ export default function Page() {
       name: "Emily White",
       type: "Delivery",
       amount: "$33.20",
-      status: "Cancelled",
+      status: "Cancelado",
       color: "red",
     },
     {
       id: "#12341",
       name: "Chris Green",
-      type: "In-site",
+      type: "En sitio",
       amount: "$55.00",
-      status: "Completed",
+      status: "Completado",
       color: "green",
     },
   ];
@@ -71,7 +71,7 @@ export default function Page() {
 
   return (
     <Layout>
-    <div className="relative flex min-h-screen w-full bg-background-light dark:bg-background-dark font-display">
+    <div className="relative flex min-h-screen w-full font-display">
           {/* Main content */}
           <main className="flex-1 p-8 overflow-y-auto">
             {/* Header */}
@@ -85,12 +85,13 @@ export default function Page() {
                 <div className="relative">
                   <input
                     type="text"
-                    placeholder="Search..."
+                    placeholder="Buscar..."
                     className="pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1C242E] text-sm text-[#0e151b] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                   <Search
                     className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
                     size={18}
+                    
                   />
                 </div>
 
@@ -101,7 +102,7 @@ export default function Page() {
                     size={18}
                   />
                   <span className="text-[#0e151b] dark:text-white text-sm">
-                    Oct 1, 2023 - Oct 31, 2023
+                    Oct 1, 2025 - Oct 31, 2025
                   </span>
                   <ChevronDown
                     className="text-gray-500 dark:text-gray-400"
@@ -133,7 +134,7 @@ export default function Page() {
               {/* Revenue trends */}
               <div className="lg:col-span-2 flex flex-col gap-2 rounded-xl bg-white dark:bg-[#1C242E] p-6 shadow-sm">
                 <p className="text-[#0e151b] dark:text-white text-base font-medium leading-normal">
-                  Revenue Trends
+                  Tendencias de Ganancias
                 </p>
 
                 <div className="flex gap-1 items-baseline">
@@ -147,7 +148,7 @@ export default function Page() {
                 </div>
 
                 <p className="text-[#4e7697] dark:text-gray-400 text-sm font-normal leading-normal">
-                  vs last 7 days
+                  vs últimos 7 días
                 </p>
 
                 {/* SVG Chart */}
@@ -157,14 +158,14 @@ export default function Page() {
               {/* Last 5 Orders */}
               <div className="flex flex-col gap-4 rounded-xl bg-white dark:bg-[#1C242E] p-6 shadow-sm">
                 <h3 className="text-[#0e151b] dark:text-white text-lg font-semibold leading-tight">
-                  Last 5 Orders Quickview
+                  Órdenes Recientes
                 </h3>
 
                 <div className="flex flex-col gap-4">
                   {orders.map(({ id, name, type, amount, status, color }) => (
                     <div
                       key={id}
-                      className="flex items-center justify-between p-3 rounded-lg bg-background-light dark:bg-background-dark"
+                      className="flex items-center justify-between p-3 rounded-lg bg-(--background)"
                     >
                       <div className="flex flex-col">
                         <p className="text-[#0e151b] dark:text-white text-sm font-medium">
@@ -195,14 +196,14 @@ export default function Page() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
               <div className="bg-white dark:bg-[#1C242E] rounded-xl shadow-sm p-6">
                 <h2 className="text-[#0e151b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] mb-4">
-                  Today&apos;s Reservation Occupancy
+                  Ocupación de Reservaciones de Hoy
                 </h2>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                   {reservations.map(({ time, percent, color }) => (
                     <div
                       key={time}
-                      className="flex flex-col gap-2 items-center p-3 rounded-lg bg-background-light dark:bg-background-dark"
+                      className="flex flex-col gap-2 items-center p-3 rounded-lg bg-(--background)"
                     >
                       <span className="text-sm text-[#4e7697] dark:text-gray-400">
                         {time}
@@ -216,7 +217,7 @@ export default function Page() {
                         />
                       </div>
                       <span className="text-sm font-semibold text-[#0e151b] dark:text-white">
-                        {percent}% Full
+                        {percent}% Lleno
                       </span>
                     </div>
                   ))}
@@ -226,7 +227,7 @@ export default function Page() {
               {/* Order Breakdown Chart */}
               <div className="bg-white dark:bg-[#1C242E] rounded-xl shadow-sm p-6">
                 <h2 className="text-[#0e151b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] mb-4">
-                  Order Breakdown
+                  Desglose de Pedidos
                 </h2>
 
                 <div className="flex items-center justify-center flex-grow h-full">
@@ -267,7 +268,7 @@ export default function Page() {
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-[#60a5fa]" />
                     <span className="text-sm text-[#0e151b] dark:text-white">
-                      In-site
+                      En sitio
                     </span>
                   </div>
                 </div>

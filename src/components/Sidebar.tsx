@@ -44,7 +44,16 @@ export default function Sidebar() {
 
   useEffect(() => {
     const root = document.documentElement;
-    root.classList.toggle("dark", theme === "dark");
+
+    // Remove the opposite class and add the current theme class
+    if(theme === "dark"){
+      root.classList.remove("light");
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+      root.classList.add("light");
+    }
+    
     localStorage.setItem("theme", theme);
   }, [theme]);
 
@@ -116,7 +125,7 @@ export default function Sidebar() {
         {/* Bottom Section */}
         <div className="flex flex-col gap-4 mt-6">
           {/* 🌓 Theme Toggle */}
-          <button
+         {/*  <button
             onClick={toggleTheme}
             className="flex items-center justify-center gap-2 h-10 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-sm font-medium transition-colors"
           >
@@ -129,7 +138,7 @@ export default function Sidebar() {
                 <Sun className="size-4" /> Light Mode
               </>
             )}
-          </button>
+          </button> */}
 
           <button className="w-full h-10 rounded-lg bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-colors">
             New Order
