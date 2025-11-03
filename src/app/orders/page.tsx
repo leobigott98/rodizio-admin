@@ -13,10 +13,10 @@ type Order = {
 };
 
 const orders: Order[] = [
-  { id: "#12345", client: "John Doe", amount: "$25.50", date: "2023-10-27", status: "Entregado" },
-  { id: "#12346", client: "Jane Smith", amount: "$42.00", date: "2023-10-27", status: "Preparando" },
-  { id: "#12347", client: "Peter Jones", amount: "$15.75", date: "2023-10-26", status: "Pendiente" },
-  { id: "#12348", client: "Mary Williams", amount: "$30.00", date: "2023-10-26", status: "Cancelado" },
+  { id: "#12345", client: "Pedro Pérez", amount: "$25.50", date: "2023-10-27", status: "Entregado" },
+  { id: "#12346", client: "María González", amount: "$42.00", date: "2023-10-27", status: "Preparando" },
+  { id: "#12347", client: "Juan Gutiérrez", amount: "$15.75", date: "2023-10-26", status: "Pendiente" },
+  { id: "#12348", client: "José Jiménez", amount: "$30.00", date: "2023-10-26", status: "Cancelado" },
 ];
 
 const statusColors: Record<Order["status"], string> = {

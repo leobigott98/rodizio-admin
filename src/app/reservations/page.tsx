@@ -34,10 +34,10 @@ const timeBlocks: TimeBlock[] = [
 ];
 
 const guestList: Guest[] = [
-  { name: "Alex Johnson", guests: 4, status: "Confirmado" },
-  { name: "Maria Garcia", guests: 2, status: "Pendiente" },
-  { name: "David Smith", guests: 6, status: "Confirmado" },
-  { name: "Emily White", guests: 3, status: "Cancelado" },
+  { name: "Alex García", guests: 4, status: "Confirmado" },
+  { name: "María Camacho", guests: 2, status: "Pendiente" },
+  { name: "David Guzmán", guests: 6, status: "Confirmado" },
+  { name: "Emily Echeverría", guests: 3, status: "Cancelado" },
 ];
 
 export default function ReservationsPage() {

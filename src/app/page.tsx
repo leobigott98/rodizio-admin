@@ -22,7 +22,7 @@ export default function Page() {
   const orders = [
     {
       id: "#12345",
-      name: "John Doe",
+      name: "Pedro Pérez",
       type: "Delivery",
       amount: "$25.50",
       status: "Entregado",
@@ -30,7 +30,7 @@ export default function Page() {
     },
     {
       id: "#12344",
-      name: "Jane Smith",
+      name: "María González",
       type: "En sitio",
       amount: "$42.00",
       status: "Completado",
@@ -38,7 +38,7 @@ export default function Page() {
     },
     {
       id: "#12343",
-      name: "Mike Johnson",
+      name: "Miguel Ramírez",
       type: "Delivery",
       amount: "$15.75",
       status: "En Proceso",
@@ -46,7 +46,7 @@ export default function Page() {
     },
     {
       id: "#12342",
-      name: "Emily White",
+      name: "Emily Echeverría",
       type: "Delivery",
       amount: "$33.20",
       status: "Cancelado",
@@ -54,7 +54,7 @@ export default function Page() {
     },
     {
       id: "#12341",
-      name: "Chris Green",
+      name: "Christian Rodríguez",
       type: "En sitio",
       amount: "$55.00",
       status: "Completado",

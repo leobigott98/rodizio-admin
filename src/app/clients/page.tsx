@@ -18,8 +18,8 @@ type Client = {
 
 const clients: Client[] = [
   {
-    name: "John Doe",
-    email: "john.doe@email.com",
+    name: "Pedro Pérez",
+    email: "pedro.perez@email.com",
     phone: "234-111-0001",
     orders: 15,
     avatar:
@@ -34,8 +34,8 @@ const clients: Client[] = [
     ],
   },
   {
-    name: "Jane Smith",
-    email: "jane.smith@email.com",
+    name: "María González",
+    email: "maria.gonzalez@email.com",
     phone: "234-567-8901",
     orders: 23,
     avatar:
@@ -50,8 +50,8 @@ const clients: Client[] = [
     ],
   },
   {
-    name: "Peter Jones",
-    email: "peter.jones@email.com",
+    name: "Juan Gutiérrez",
+    email: "juan.gutierrez@email.com",
     phone: "234-333-4444",
     orders: 8,
     avatar:
@@ -65,8 +65,8 @@ const clients: Client[] = [
     ],
   },
   {
-    name: "Mary Williams",
-    email: "mary.williams@email.com",
+    name: "José Jiménez",
+    email: "jose.jimenez@email.com",
     phone: "234-222-7890",
     orders: 31,
     avatar:
@@ -151,10 +151,10 @@ export default function ClientsPage() {
                   >
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center gap-3">
-                        <div
+                       {/*  <div
                           className="bg-center bg-cover rounded-full size-8"
                           style={{ backgroundImage: `url(${client.avatar})` }}
-                        />
+                        /> */}
                         <span className="text-sm font-medium">
                           {client.name}
                         </span>
@@ -182,10 +182,10 @@ export default function ClientsPage() {
         <div className="lg:col-span-1 bg-component-light dark:bg-component-dark rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm p-6 self-start flex flex-col">
           {/* Client Info */}
           <div className="flex flex-col items-center text-center">
-            <div
+            {/* <div
               className="bg-center bg-cover rounded-full w-32 h-32 mb-4"
               style={{ backgroundImage: `url(${selectedClient.avatar})` }}
-            />
+            /> */}
             <p className="text-xl font-bold text-text-light dark:text-text-dark">
               {selectedClient.name}
             </p>
