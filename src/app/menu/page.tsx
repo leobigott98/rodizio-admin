@@ -64,7 +64,7 @@ const dishes: Dish[] = [
 const categories = ["Todos", "Entradas", "Principales", "Postres", "Bebidas"];
 
 export default function MenuPage() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [search, setSearch] = useState("");
 
   const filteredDishes = dishes.filter(
