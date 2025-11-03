@@ -21,11 +21,11 @@ import { usePathname } from "next/navigation";
 
 const menuItems = [
   { icon: LayoutDashboard, label: "Dashboard", href: "/" },
-  { icon: ShoppingCart, label: "Orders", href: "/orders" },
-  { icon: Users, label: "Clients", href: "/clients" },
-  { icon: Utensils, label: "Menu", href: "/menu" },
-  { icon: BookOpen, label: "Reservations", href: "/reservations" },
-  { icon: Settings, label: "Settings", href: "/settings" },
+  { icon: ShoppingCart, label: "Órdenes", href: "/orders" },
+  { icon: Users, label: "Clientes", href: "/clients" },
+  { icon: Utensils, label: "Menú", href: "/menu" },
+  { icon: BookOpen, label: "Reservaciones", href: "/reservations" },
+  //{ icon: Settings, label: "Ajustes", href: "/settings" },
 ];
 
 export default function Sidebar() {
@@ -94,10 +94,10 @@ export default function Sidebar() {
             />
             <div>
               <h1 className="text-[#0e151b] dark:text-white text-base font-medium">
-                The Gourmet
+                Rodizio Bot
               </h1>
               <p className="text-[#4e7697] dark:text-gray-400 text-sm">
-                Admin Panel
+                Panel Administrativo
               </p>
             </div>
           </div>
@@ -141,17 +141,17 @@ export default function Sidebar() {
           </button> */}
 
           <button className="w-full h-10 rounded-lg bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-colors">
-            New Order
+            Nueva Orden
           </button>
 
           <div className="flex flex-col gap-1 border-t border-gray-200 dark:border-gray-700 pt-4">
             <div className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">
               <User className="size-5" />
-              <p className="text-sm font-medium">Profile</p>
+              <p className="text-sm font-medium">Perfil</p>
             </div>
             <div className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">
               <LogOut className="size-5 text-red-500" />
-              <p className="text-red-500 text-sm font-medium">Logout</p>
+              <p className="text-red-500 text-sm font-medium">Cerrar Sesión</p>
             </div>
           </div>
         </div>

@@ -1,6 +1,5 @@
 "use client";
 
-import Sidebar from "@/src/components/Sidebar";
 import { Plus, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import Layout from "@/src/components/Layout";
@@ -36,15 +35,15 @@ export default function OrdersPage() {
         <div className="lg:col-span-2">
           {/* Header */}
           <div className="flex flex-wrap justify-between gap-3 mb-6">
-            <h1 className="text-4xl font-black tracking-tight">Delivery Orders</h1>
+            <h1 className="text-4xl font-black tracking-tight">Órdenes de Delivery</h1>
             <button className="bg-primary text-white font-medium px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-primary/90 transition-colors">
-              <Plus className="size-5" /> New Order
+              <Plus className="size-5" /> Nueva Orden
             </button>
           </div>
 
           {/* Filter Chips */}
           <div className="flex flex-wrap gap-3 mb-6">
-            {["Filter by Date", "Payment Status", "Delivery Status"].map((label) => (
+            {["Filtrar por Fecha", "Estatus del Pago", "Estatus de la Orden"].map((label) => (
               <button
                 key={label}
                 className="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-[#1C242E] border border-gray-200 dark:border-gray-700 px-4 hover:bg-gray-50 dark:hover:bg-gray-700"
@@ -60,7 +59,7 @@ export default function OrdersPage() {
             <table className="w-full">
               <thead className="bg-gray-50 dark:bg-[#1C242E]">
                 <tr>
-                  {["Order ID", "Client Name", "Amount", "Date", "Status", ""].map((head) => (
+                  {["ID de Orden", "Nombre de Cliente", "Monto", "Fecha", "Estatus", ""].map((head) => (
                     <th
                       key={head}
                       className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider"
@@ -100,7 +99,7 @@ export default function OrdersPage() {
                     </td>
                     <td className="px-6 py-4 text-right text-sm font-medium">
                       <button className="text-primary hover:text-primary/80">
-                        View Details
+                        Ver Detalles
                       </button>
                     </td>
                   </tr>
@@ -112,33 +111,33 @@ export default function OrdersPage() {
 
         {/* Right Section - Order Details */}
         <div className="bg-white dark:bg-[#1C242E]/70 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 flex flex-col gap-6">
-          <h2 className="text-lg font-bold">Order Details</h2>
+          <h2 className="text-lg font-bold">Detalle de la Orden</h2>
 
           {selectedOrder ? (
             <>
               {/* Client Details */}
               <div className="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
-                <h3 className="font-semibold mb-2">Client Details</h3>
+                <h3 className="font-semibold mb-2">Detalle del Cliente</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300">{selectedOrder.client}</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">+1 (555) 123-4567</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">+58 (412) 123-4567</p>
               </div>
 
               {/* Order Summary */}
               <div className="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
-                <h3 className="font-semibold mb-2">Order Summary</h3>
+                <h3 className="font-semibold mb-2">Resumen de la Orden</h3>
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-600 dark:text-gray-300">Amount:</span>
+                  <span className="text-gray-600 dark:text-gray-300">Monto:</span>
                   <span className="font-medium">{selectedOrder.amount}</span>
                 </div>
                 <div className="flex justify-between text-sm mt-1">
-                  <span className="text-gray-600 dark:text-gray-300">Date:</span>
+                  <span className="text-gray-600 dark:text-gray-300">Fecha:</span>
                   <span className="font-medium">{selectedOrder.date}</span>
                 </div>
               </div>
 
               {/* Order Items */}
               <div className="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
-                <h3 className="font-semibold mb-2">Order Items</h3>
+                <h3 className="font-semibold mb-2">Artículos de la Orden</h3>
                 <ul className="text-sm space-y-2">
                   <li className="flex justify-between">
                     <span className="text-gray-600 dark:text-gray-300">1x Spaghetti Carbonara</span>
@@ -155,40 +154,40 @@ export default function OrdersPage() {
                 </ul>
                 <div className="border-t border-gray-200 dark:border-gray-700 mt-2 pt-2">
                   <p className="text-xs text-gray-500 dark:text-gray-400">
-                    Note: No onions in the pasta.
+                    Nota: Sin cebolla en la pasta.
                   </p>
                 </div>
               </div>
 
               {/* Payment Info */}
               <div className="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
-                <h3 className="font-semibold mb-2">Payment Information</h3>
+                <h3 className="font-semibold mb-2">Información del Pago</h3>
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-600 dark:text-gray-300">Method:</span>
-                  <span>Credit Card</span>
+                  <span className="text-gray-600 dark:text-gray-300">Método:</span>
+                  <span>Tarjeta de Crédito</span>
                 </div>
                 <div className="flex justify-between text-sm mt-1">
-                  <span className="text-gray-600 dark:text-gray-300">Status:</span>
-                  <span className="font-medium text-green-600">Paid</span>
+                  <span className="text-gray-600 dark:text-gray-300">Estatus:</span>
+                  <span className="font-medium text-green-600">Pagado</span>
                 </div>
               </div>
 
               {/* Order Status */}
               <div className="mt-auto">
-                <h3 className="font-semibold mb-2">Order Status</h3>
+                <h3 className="font-semibold mb-2">Estatus de la Orden</h3>
                 <select className="w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-[#1C242E] dark:text-white focus:border-primary focus:ring-primary">
-                  <option>Pending</option>
-                  <option>Preparing</option>
-                  <option>Delivered</option>
-                  <option>Canceled</option>
+                  <option>Pendiente</option>
+                  <option>Preparando</option>
+                  <option>Entregada</option>
+                  <option>Cancelada</option>
                 </select>
                 <button className="w-full mt-4 bg-primary text-white font-medium py-2 rounded-lg hover:bg-primary/90 transition-colors">
-                  Update Status
+                  Actualizar Estatus
                 </button>
               </div>
             </>
           ) : (
-            <p className="text-gray-500 dark:text-gray-400">Select an order to view details.</p>
+            <p className="text-gray-500 dark:text-gray-400">Selecciona una Orden para Ver Detalles</p>
           )}
         </div>
       </Layout>

@@ -1,6 +1,5 @@
 "use client";
 
-import Sidebar from "@/src/components/Sidebar";
 import { Search } from "lucide-react";
 import { useState } from "react";
 import Layout from "@/src/components/Layout";
@@ -98,10 +97,10 @@ export default function ClientsPage() {
           <div className="flex flex-wrap justify-between gap-4">
             <div className="flex flex-col gap-1">
               <h1 className="text-4xl font-black tracking-tight text-text-light dark:text-text-dark">
-                Clients
+                Clientes
               </h1>
               <p className="text-base text-text-secondary-light dark:text-text-secondary-dark">
-                Manage your restaurant&apos;s client base.
+                Administra la base de clientes de tu restaurante
               </p>
             </div>
           </div>
@@ -114,7 +113,7 @@ export default function ClientsPage() {
               </div>
               <input
                 type="text"
-                placeholder="Search by name or contact info"
+                placeholder="Buscar por nombre o informaciónn de contacto"
                 className="flex-1 px-4 py-2 bg-component-light dark:bg-component-dark text-text-light dark:text-text-dark focus:outline-none"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
@@ -128,13 +127,13 @@ export default function ClientsPage() {
               <thead className="bg-slate-50 dark:bg-slate-800/50">
                 <tr>
                   <th className="px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-text-light dark:text-text-dark">
-                    Client Name
+                    Nombre del Cliente
                   </th>
                   <th className="px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-text-light dark:text-text-dark">
-                    Contact Info
+                    Información de Contacto
                   </th>
                   <th className="px-6 py-4 text-left text-xs font-medium uppercase tracking-wider text-text-light dark:text-text-dark">
-                    Total Orders
+                    Total de Órdenes
                   </th>
                   <th className="px-6 py-4 text-right text-xs font-medium uppercase tracking-wider"></th>
                 </tr>
@@ -169,7 +168,7 @@ export default function ClientsPage() {
                     </td>
                     <td className="px-6 py-4 text-right text-sm font-medium">
                       <button className="text-primary hover:text-primary/80">
-                        View
+                        Ver
                       </button>
                     </td>
                   </tr>
@@ -198,10 +197,10 @@ export default function ClientsPage() {
             </p>
             <div className="flex gap-3 mt-6 w-full">
               <button className="flex-1 py-2 px-4 rounded-lg bg-slate-200/60 dark:bg-slate-700/60 text-text-light dark:text-text-dark text-sm font-semibold hover:bg-slate-200 dark:hover:bg-slate-700">
-                Edit
+                Editar
               </button>
               <button className="flex-1 py-2 px-4 rounded-lg bg-red-500/10 text-red-500 text-sm font-semibold hover:bg-red-500/20">
-                Delete
+                Borrar
               </button>
             </div>
           </div>
@@ -210,7 +209,7 @@ export default function ClientsPage() {
 
           {/* Analytics */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Client Analytics</h3>
+            <h3 className="text-lg font-semibold mb-4">Analíticas del Cliente</h3>
             <div className="space-y-4">
               <div className="flex justify-between">
                 <span className="text-sm text-text-secondary-light dark:text-text-secondary-dark">
@@ -222,7 +221,7 @@ export default function ClientsPage() {
               </div>
               <div className="flex justify-between">
                 <span className="text-sm text-text-secondary-light dark:text-text-secondary-dark">
-                  Average Order Value
+                  Valor Promedio por Orden
                 </span>
                 <span className="text-sm font-bold">
                   ${selectedClient.avgOrderValue.toFixed(2)}
@@ -230,7 +229,7 @@ export default function ClientsPage() {
               </div>
               <div>
                 <span className="text-sm text-text-secondary-light dark:text-text-secondary-dark mb-2 block">
-                  Order Frequency
+                  Frecuencia de Órdenes
                 </span>
                 <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2.5">
                   <div
@@ -246,7 +245,7 @@ export default function ClientsPage() {
 
           {/* Purchase History */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Purchase History</h3>
+            <h3 className="text-lg font-semibold mb-4">Historial de Compras</h3>
             <ul className="space-y-3">
               {selectedClient.history.map((order) => (
                 <li
@@ -254,7 +253,7 @@ export default function ClientsPage() {
                   className="flex justify-between items-center text-sm"
                 >
                   <span className="text-text-secondary-light dark:text-text-secondary-dark">
-                    Order {order.id}
+                    Orden {order.id}
                   </span>
                   <span className="text-text-light dark:text-text-dark">
                     {order.amount}

@@ -22,7 +22,7 @@ type TimeBlock = {
 type Guest = {
   name: string;
   guests: number;
-  status: "Confirmed" | "Pending" | "Cancelled";
+  status: "Confirmado" | "Pendiente" | "Cancelado";
 };
 
 const timeBlocks: TimeBlock[] = [
@@ -34,10 +34,10 @@ const timeBlocks: TimeBlock[] = [
 ];
 
 const guestList: Guest[] = [
-  { name: "Alex Johnson", guests: 4, status: "Confirmed" },
-  { name: "Maria Garcia", guests: 2, status: "Pending" },
-  { name: "David Smith", guests: 6, status: "Confirmed" },
-  { name: "Emily White", guests: 3, status: "Cancelled" },
+  { name: "Alex Johnson", guests: 4, status: "Confirmado" },
+  { name: "Maria Garcia", guests: 2, status: "Pendiente" },
+  { name: "David Smith", guests: 6, status: "Confirmado" },
+  { name: "Emily White", guests: 3, status: "Cancelado" },
 ];
 
 export default function ReservationsPage() {
@@ -47,11 +47,11 @@ export default function ReservationsPage() {
 
   const getStatusBadge = (status: Guest["status"]) => {
     const styles = {
-      Confirmed:
+      Confirmado:
         "text-green-800 bg-green-100 dark:bg-green-900 dark:text-green-200",
-      Pending:
+      Pendiente:
         "text-orange-800 bg-orange-100 dark:bg-orange-900 dark:text-orange-200",
-      Cancelled:
+      Cancelado:
         "text-red-800 bg-red-100 dark:bg-red-900 dark:text-red-200",
     };
     return styles[status];
@@ -65,14 +65,14 @@ export default function ReservationsPage() {
           <div className="flex flex-wrap justify-between items-center gap-4">
             <div className="flex flex-col gap-1">
               <p className="text-3xl font-black leading-tight tracking-[-0.033em]">
-                Reservations
+                Reservaciones
               </p>
               <p className="text-base text-slate-500 dark:text-slate-400">
-                Tuesday, 23 October 2024
+                Lunes, 03 de noviembre 2025
               </p>
             </div>
             <button className="flex items-center justify-center rounded-lg h-10 px-4 bg-white dark:bg-[#1C242E] text-sm font-bold border border-slate-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-gray-700">
-              Today
+              Hoy
             </button>
           </div>
 
@@ -88,14 +88,14 @@ export default function ReservationsPage() {
             </div>
             <button className="flex items-center justify-center rounded-lg h-10 bg-primary text-white gap-2 text-sm font-bold px-4 hover:bg-primary/90">
               <Plus className="size-4" />
-              Add Reservation
+              Agregar Reservación
             </button>
           </div>
 
           {/* Reservation / Walk-in progress */}
           <div className="bg-white dark:bg-[#1C242E] p-4 rounded-lg border border-slate-200 dark:border-slate-800">
             <p className="text-base font-medium mb-2">
-              Reservation / Walk-in Allocation
+              Con Reservación / Sin Reservación
             </p>
             <div className="relative h-3 rounded-full bg-primary/20 dark:bg-primary/30 overflow-hidden">
               <div
@@ -104,8 +104,8 @@ export default function ReservationsPage() {
               />
             </div>
             <div className="flex justify-between text-sm mt-2 text-slate-600 dark:text-slate-400">
-              <p>70% Reserved</p>
-              <p>30% Walk-ins</p>
+              <p>70% Con Reservación</p>
+              <p>30% Sin Reservación</p>
             </div>
           </div>
 
@@ -124,7 +124,7 @@ export default function ReservationsPage() {
                 <div className="flex justify-between items-center">
                   <p className="text-lg font-bold">{block.time}</p>
                   <button className="text-slate-500 dark:text-slate-400 hover:text-primary">
-                    View Details
+                    Ver Detalles
                   </button>
                 </div>
                 <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2.5">
@@ -134,8 +134,8 @@ export default function ReservationsPage() {
                   />
                 </div>
                 <p className="text-sm text-slate-500 dark:text-slate-400">
-                  Reserved: {block.reserved} / {block.capacity}, Walk-ins (est.):
-                  {` ${block.walkIns}, Remaining: ${block.remaining}`}
+                  Reservado: {block.reserved} / {block.capacity}, Sin Reservación (est.):
+                  {` ${block.walkIns}, Restante: ${block.remaining}`}
                 </p>
               </div>
             ))}
@@ -144,7 +144,7 @@ export default function ReservationsPage() {
             <div className="flex flex-col items-center justify-center gap-4 p-4 bg-white dark:bg-[#1C242E] rounded-lg border border-dashed border-slate-300 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer transition">
               <Plus className="size-10 text-slate-400 dark:text-slate-500" />
               <p className="text-slate-500 dark:text-slate-400">
-                Add New Time Block
+                Agregar Nuevo Bloque de Horario
               </p>
             </div>
           </div>
@@ -163,7 +163,7 @@ export default function ReservationsPage() {
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 size-4" />
                 <input
                   type="text"
-                  placeholder="Search by name or ID..."
+                  placeholder="Buscar por nombre o ID..."
                   className="w-full pl-10 pr-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1C242E]/70 focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
@@ -178,7 +178,7 @@ export default function ReservationsPage() {
                     <div className="flex-1 flex flex-col gap-1">
                       <p className="font-semibold">{guest.name}</p>
                       <p className="text-sm text-slate-500 dark:text-slate-400">
-                        {guest.guests} Guests
+                        {guest.guests} Comensales
                       </p>
                     </div>
                     <span
@@ -196,10 +196,10 @@ export default function ReservationsPage() {
             {/* Action buttons */}
             <div className="flex gap-3 pt-4 border-t border-slate-200 dark:border-slate-800">
               <button className="flex-1 flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold hover:bg-primary/90">
-                Manage
+                Administrar
               </button>
               <button className="flex-1 flex items-center justify-center rounded-lg h-10 px-4 bg-slate-100 dark:bg-[#1C242E] text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 text-sm font-bold hover:bg-gray-50 dark:hover:bg-gray-700">
-                View Full List
+                Ver Lista Completa
               </button>
             </div>
           </div>
